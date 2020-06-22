@@ -1,6 +1,35 @@
 This is the codebook for the finaldataset variable at the end of the analysis, which stores
 the tidy data set made.
 
-All the variables which had mentions of mean and std were extracted from the data set. They are present as columns in the final data set.
-These variables are named with the same alphanumeric characters and "_" replacing the special characters.
-In each column of these variables the mean values per activity per subject are recorded.
+FILENAME : run_analysis.R
+
+1. Names of variables files are imported into
+a. xtrain : "X_train.txt". Changed to xtrain1 in tbl_df format.
+b. ytrain : "y_train.txt". Changed to ytrain1 in tbl_df format.
+c. xtest : "X_test.text". Changed to xtest1 in tbl_df format.
+d. ytest : "y_test.txt". Changed to ytest1 in tbl_df format.
+e. subjecttest: "subject_test.txt". Changed to subjecttest1 in tbl_df format.
+f. subjecttrain: "subject_train.txt".  Changed to subjecttrain1 in tbl_df format.
+g. feature: "features.txt". Changed to tbl_df format and assigned to same variable name.
+
+2. Libraries imported.
+a. dplyr
+b. tidyverse
+c. reshape
+d. reshape2
+e. janitor
+
+3. Variables encountered in data file.
+a. tags: The solitary column of features, containing all the column headings of xtrain1 and xtest1.
+b. ytest2: Changed the numbers to labels from ytest1 data to apply to the xtest1 activity column we made (walking, lying etc.)
+c. ytrain2: Changed numbers to labels from ytrain1 data to apply to xtrain1 activity column we made (walking, standing, lying etc.)
+d. bigdata: It is the combination of data sets xtest1 and xtest1 together, horizontally, one on top of another.
+e. gbigdata: Just a reassignment of bigdata. Eases in demarcating new procedures.
+g. gbigdata1: Selecting columns with mean from gbigdata and putting it here.
+h. gbigdata2: Selecting columns with std from gbigdata and putting them here.
+i. gfbigdata: Combining gbigdata1 and gbigdata2 here.
+j. expdata: A data frame form of gfbigdata as tbl_df form was causing problems with melting and casting
+k. edata: Melted form of expdata
+l. finaldataset: Casted from edata, final tidy data set.
+
+Last line used to write file.
