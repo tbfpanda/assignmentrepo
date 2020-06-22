@@ -1,0 +1,6 @@
+This is the codebook for the finaldataset variable at the end of the analysis, which stores
+the tidy data set made.
+
+All the variables which had mentions of mean and std were extracted from the data set. They are present as columns in the final data set.
+These variables are named with the same alphanumeric characters and "_" replacing the special characters.
+In each column of these variables the mean values per activity per subject are recorded.
